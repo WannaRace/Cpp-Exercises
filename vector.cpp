@@ -19,13 +19,13 @@ int main()
     int vecSum = 0;
     for (vector<int>::size_type i = 0; i <= ivec.size()-1; i++)
     {
-        if (i != ivec.size()-(i+1)) //not the same index
+        if (i < ivec.size()-1) //not the last item
         {
             vecSum = ivec[i] + ivec[i+1];
             cout << ivec[i] << " + " << ivec[i+1] << " = " << vecSum << endl;
             i++;
         }
-        else if (ivec.size()%2 != 0) //same index and odd vector size
+        else if (i == ivec.size()-1) //last element
         {
             vecSum += ivec[i];
             cout << "Odd number left out: " << vecSum << endl;
